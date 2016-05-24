@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+HTML and Javascript Slideshow
+Copyright (C) 2011  html5marketplace.com
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>HTML Slideshow</title>
+<link rel="stylesheet" type="text/css" href="cssstyles.css" />
+</head>
+<body>
+<center>
+<h1>HTML Slideshow (Slide Left/Slide Right)</h1>
+<br /><br />
+
+<div id="container">
+	<ul>
+      	<li><img src="../images/picture1.jpg" width="604" height="453" /></li>
+            <li><img src="../images/picture2.jpg" width="604" height="453" /></li>
+            <li><img src="../images/picture3.jpg" width="604" height="453" /></li>
+      </ul>
+      <span class="button prevButton"></span>
+      <span class="button nextButton"></span>
+</div>
+</center>
+
+<script src="../js/jquery-1.4.2.min.js"></script>
+
+<script>
+$(window).load(function(){
+		var pages = $('#container li'), current=0;
+		var currentPage,nextPage;
+		var handler=function(){
+			$('#container .button').unbind('click');
+			currentPage= pages.eq(current);
+			if($(this).hasClass('prevButton'))
+			{
+				if (current <= 0)
+					current=pages.length-1;
+				else
+					current=current-1;
+				nextPage = pages.eq(current);	
+
+				nextPage.css("marginLeft",-604);
+				nextPage.show();
+				nextPage.animate({ marginLeft: 0 }, 800,function(){
+					currentPage.hide();
+				});
+				currentPage.animate({ marginLeft: 604 }, 800,function(){
+					$('#container .button').bind('click',handler);
+				});
+			}
+			else
+			{
+
+				if (current >= pages.length-1)
+					current=0;
+				else
+					current=current+1;
+				nextPage = pages.eq(current);	
+
+				nextPage.css("marginLeft",604);
+				nextPage.show();
+				nextPage.animate({ marginLeft: 0 }, 800,function(){
+				});
+				currentPage.animate({ marginLeft: -604 }, 800,function(){
+					currentPage.hide();
+					$('#container .button').bind('click',handler);
+				});
+			}
+		}
+
+		$('#container .button').click(handler);
+		
+});
+
+</script>
+</body>
+</html>

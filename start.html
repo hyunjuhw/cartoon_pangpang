@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>Start</title>
+	<meta charset="utf-8" />
+
+    <!-- css 파일 -->
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./css/layer_popup.css" />
+
+    <!-- js 파일 -->
+    <script type="text/javascript" src="./js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="./js/layer_popup.js"></script>
+</head>
+<body>
+<!--로그인 폼-->
+    <center>
+	<form class="form">
+    <p>
+        <input type="text" id="login" name="login" placeholder="Username">
+        <input type="password" name="password" id="password" placeholder="Password"> 
+    </p>   
+	</form>
+    </center>
+
+    <div class="mb30">
+        <a href="#" class="btn-example" onclick="layer_open('layer2');return false;">Submit</a>
+    </div>
+<!-- 딤 레이어 팝업 창-->
+    <div class="layer">
+        <div class="bg"></div>
+        <div id="layer2" class="pop-layer">
+            <div class="pop-container">
+                <div class="pop-conts">
+                    <!--content //-->
+                        <form>
+                            <input type='BUTTON' value='Learn!'><br>
+                            <input type='BUTTON' value='Make New Cartoon!'><br>
+                            <input type='BUTTON' value='Gallery'><br>
+                        </form>
+
+                    <div class="btn-r">
+                        <a href="#" class="cbtn">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
