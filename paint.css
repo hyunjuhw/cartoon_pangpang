@@ -1,0 +1,479 @@
+﻿div#eventcatcher {
+    margin: 0px;
+    padding-right: 1100px;
+    padding-bottom: 600px;
+    border-width: 0px;
+    border-color: #333333;
+    border-style: solid;
+    position: absolute;
+    z-index: 100;
+    display: block;
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+div#paper {
+    position: absolute;
+    left: 350px;
+    top: 40px;
+    width: 700px;
+    height: 500px;
+    margin: 0px;
+    padding: 0px;
+    z-index: 1;
+    display: block;
+    background-color: #ffffff;
+    border-width: 1px;
+    border-color: #333333;
+    border-style: solid;
+    box-shadow: 3px 3px 0px #bbbbbb;
+    -webkit-box-shadow: 3px 3px 0px #c0c0c0;
+}
+
+
+div.menu {
+    margin: 0;
+    padding: 0;
+    border-width: 1px;
+    border-color: #000000;
+    border-style: solid;
+    position: absolute;
+    z-index: 200;
+    background-color: #ffffff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 3px 3px 0px #bbbbbb;
+    -webkit-box-shadow: 3px 3px 0px #c0c0c0;
+}
+
+div.menu#tools {
+    top: 40px;
+    left: 1100px;
+    width: 80px;
+}
+
+div.menu#colors {
+    top: 150px;
+    left: 1100px;
+    width: 80px;
+}
+
+div.menu#itemInventory {
+    top: 40px;
+    left: 1200px;
+    width: 120px;
+}
+
+
+
+
+div.menu#layers {
+    top: 310px;
+    left: 10px;
+    width: 80px;
+}
+
+div.menu#edit {
+    top: 260px;
+    left: 1100px;
+    width: 80px;
+}
+
+
+
+div.menu#postimage {
+    top: 150px;
+    left: 200px;
+}
+
+div.menu#postimage div#postimage_form{
+    position:relative;
+    width: 400px;
+    height: 170px;
+    margin: 0px;
+    padding: 5px;
+    border-width: 1px;
+    border-color: #333333;
+    border-style: solid;
+    background-color: #dddddd;
+}
+
+div.menu#postimage div#postimage_form label {
+    display:block;
+    padding: 3px;
+}
+
+div.menu#postimage #postimage_buttons {
+    margin-top: 10px;
+    padding: 3px;
+    display: block;
+}
+
+div.menu#postimage #postimage_buttons button {
+    font-size: 15px;
+    padding: 4px;
+    border-width: 1px;
+    border-color: #525252;;
+    border-style: solid;
+    background-color: #dddddd;
+}
+
+div.menu#postimage #postimage_buttons button:hover {
+    background-color: #eeeeee;
+}
+
+#postimage_name {
+    width: 200px;
+}
+
+#postimage_comment {
+    width: 380px;
+}
+
+
+div.menu#tools button {
+    margin: 0px;
+    padding: 0px;
+    border-width: 0px;
+    height: 40px;
+    width: 40px;
+    float:left;
+}
+
+div.menu#tools button.tool {
+    background-color: #ffffff;
+    background-image: url('./icons/button.png');
+    cursor: pointer;
+}
+
+div.menu#tools button.tool img {
+    margin: 0;
+    padding: 0;
+    border-width: 0px;
+    display: block;
+}
+
+div.menu#tools button.dummy_button {
+    background-color: #dddddd;
+}
+
+div.menu#tools button.tool.hover {
+    background-image: url('./icons/button_hover.png');
+}
+
+div.menu#tools button.tool.selected {
+    background-image: url('./icons/button_selected.png');
+}
+
+div.menu#tools button.tool.pushed {
+    background-image: url('./icons/button_down.png');
+}
+
+div.menu#itemInventory img{
+    margin: 0px;
+    padding: 0px;
+    border-width: 0px;
+    height: 60px;
+    width: 60px;
+    float:left;
+}
+
+
+
+div.menu#colors button {
+    margin: 0px;
+    padding: 0px;
+    border-width: 0px;
+    height: 40px;
+    width: 40px;
+    float:left;
+}
+
+div.menu#colors button.tool {
+    
+    cursor: pointer;
+}
+
+div.menu#colors button.tool img {
+    margin: 0;
+    padding: 0;
+    border-width: 0px;
+    display: block;
+}
+
+div.menu#colors button.dummy_button {
+    background-color: #dddddd;
+}
+
+
+
+div.menu#colors button.tool.selected {
+    background-image: url('./icons/button_selected.png');
+}
+
+div.menu#colors button.tool.pushed {
+    background-image: url('./icons/button_down.png');
+}
+
+#redbutton{
+	background-color: #f44336;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#yellowbutton{
+	background-color: yellow;
+    border: none;
+    color: white;
+    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+#bluebutton{
+	background-color: #008CBA; 
+    border: none;
+    color: white;
+    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+#blackbutton{
+	background-color: #555555;
+    border: none;
+    color: white;
+    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+div.menu#layers button {
+    font-size: 10px;
+    line-height: normal;
+    text-align: left;
+    margin: 0px;
+    padding: 2px;
+    border-width: 1px;
+    border-color: #525252;
+    border-style: solid;
+    width: 100%;
+    background-color: #cccccc;
+    display: block;
+    overflow: hidden;
+}
+
+div.menu#layers img {
+    margin: 0px 4px 0px 0px;
+    padding: 0px;
+    float: left;
+}
+
+div.menu#layers button.hover {
+    background-color: #f0f0f0;
+}
+
+div.menu#layers button.pushed {
+    background-color: #aaaaaa;
+}
+
+div.menu#layers button.disabled {
+    background-color: #bbbbbb;
+    color: #666666;
+}
+
+div.menu#layers button.selected {
+    background-color: #ffffff;
+}
+
+div.menu#edit button {
+    font-size: 12px;
+    line-height: normal;
+    text-align: left;
+    margin: 0px;
+    padding: 2px;
+    border-width: 1px;
+    border-color: #525252;
+    border-style: solid;
+    width: 100%;
+    background-color: #cccccc;
+    display: block;
+    overflow: hidden;
+}
+
+div.menu#edit button.hover {
+    background-color: #f0f0f0;
+}
+
+div.menu#edit button.pushed {
+    background-color: #aaaaaa;
+}
+
+div.menu#edit button.disabled {
+    background-color: #bbbbbb;
+    color: #666666;
+}
+
+div.menu#edit button.selected {
+    background-color: #ffffff;
+}
+
+div.menu h2 {
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: normal;
+    margin: 0px;
+    padding: 3px;
+    background-color: #444444;
+    background-image: url('./icons/window_title.png');
+    background-repeat: repeat-x;
+}
+
+div#colorpicker {
+    position:relative;
+    width: 290px;
+    height: 280px;
+    margin: 0px;
+    padding: 0px;
+    border-width: 1px;
+    border-color: #333333;
+    border-style: solid;
+    background-color: #dddddd;
+}
+
+div#colorpicker .colorpicker_tab_buttons{
+    margin: 1px 0 -1px;
+    padding: 0;
+    z-index: 5;
+}
+
+div#colorpicker .colorpicker_tab_button {
+    font-size: 13px;
+    text-align: center;
+    margin: 0px 0px 0px;
+    padding: 2px;
+    border-width: 1px 1px 0;
+    border-color: #a5a5a5;
+    border-style: solid;
+    float: left;
+    display: block;
+    overflow: hidden;
+    background-color: #bbbbbb;
+}
+
+div#colorpicker .colorpicker_tab {
+    border-width: 1px 1px 1px;
+    border-color: #a5a5a5;
+    border-style: solid;
+    clear: both;
+    position: relative;
+    height: 150px;
+    background-color: #dddddd;
+}
+
+div#colorpicker .colorbar {
+    border-style: solid;
+    border-color: #000000;
+    border-width: 1px;
+    position: absolute;
+}
+
+div#colorpicker #outoftag_picker {
+    position: relative;
+    height: 70px;
+}
+
+div#colorpicker .colorpicker_tab_button.hover {
+    background-color: #f0f0f0;
+}
+
+div#colorpicker .colorpicker_tab_button.pushed {
+    background-color: #aaaaaa;
+}
+
+div#colorpicker .colorpicker_tab_button.disabled {
+    background-color: #bbbbbb;
+    color: #666666;
+}
+
+div#colorpicker .colorpicker_tab_button.selected {
+    background-color: #dddddd;
+}
+
+
+div#paintfilloption {
+    position:relative;
+    width: 290px;
+    height: 150px;
+    margin: 0px;
+    padding: 0px;
+    border-width: 1px;
+    border-color: #333333;
+    border-style: solid;
+    background-color: #dddddd;
+}
+div#paintfilloption div {
+    margin: 10px;
+    position:relative;
+}
+
+#paintfill_threshold {
+    width: 40px;
+}
+
+div#paintfilloption div.range {
+    position:relative;
+    margin: 0px;
+    padding: 0px;
+}
+
+div#paintfilloption div#paintfill_threshold_range {
+    margin: 0px;
+    padding-bottom: 30px;
+    width: 258px;
+    height: 30px;
+    z-index: 250;
+    position:relative;
+}
+
+div#paintfilloption div.range_bar {
+    margin: 0px;
+    border-width: 1px;
+    border-color: #aaaaaa;
+    border-style: inset;
+    position: absolute;
+    top: 17px;
+    left: 0px;
+    height: 1px;
+    width: 255px;
+    z-index: 200;
+}
+
+div#paintfilloption div.range_pos {
+    margin: 0px;
+    border-width: 1px;
+    border-color: #aaaaaa;
+    border-style: outset;
+    position: absolute;
+    top: 10px;
+    left: -3px;
+    height: 15px;
+    width: 5px;
+    background-color: #dddddd;
+    z-index: 200;
+
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #cccccc;
+}

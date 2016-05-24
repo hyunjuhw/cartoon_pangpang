@@ -1,0 +1,129 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="application-name" content="lislisPainter" />
+    <meta name="description" content="Canvas Paint Application" />
+    <meta name="Author" content="lislis" />
+    <title>lislis Painter</title>
+    <link rel="stylesheet" href="./paint.css" type="text/css">
+    <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="easydrag.js"></script>
+    <script type="text/javascript" src="paint.js"></script>
+    <script type="text/javascript" src="painttools.js"></script>
+    <script type="text/javascript" src="paintmenu.js"></script>
+    <script type="text/javascript" src="colorpicker.js"></script>
+    <script type="text/javascript" src="brushsize.js"></script>
+    <script type="text/javascript" src="postimage.js"></script>
+
+</head>
+<body>
+    <div id="paper"></div>
+    <script type="text/javascript">
+$("#dragImage").draggable({ helper: "clone" });
+$("#paper").droppable({
+drop: function(event, ui) {
+$("#paper").append("<img id='dragImage' src='brush.png' />");
+}
+});
+</script>
+    <div id="eventcatcher"></div>
+    <div class="menu" id="tools">
+        <h2>Tools</h2>
+        <button title="Brush" id="button_brush" class="tool"><img src="./icons/brush.png" width="40" height="40" /></button>
+        
+        <button title="Eraser" id="button_eraser" class="tool"><img src="./icons/eraser.png" width="40" height="40" /></button>
+        <button title="Paint Fill" id="button_paintfill" class="tool"><img src="./icons/paintfill.png" width="40" height="40" /></button>
+        <button title="Clear Rect" id="button_clearrect" class="tool"><img src="./icons/clearrect.png" width="40" height="40" /></button>
+        
+        
+    </div>
+
+    <div class="menu" id="colors">
+        <h2>Color</h2>
+        <button title="Redcolor" id="redbutton" class="tool"></button>
+        <button title="Bluecolor" id="bluebutton" class="tool"></button>
+        <button title="Yellowcolor" id="yellowbutton" class="tool"></button>
+        <button title="Blackcolor" id="blackbutton" class="tool"></button>
+
+         </div>
+         <script>
+             $("#redbutton").click(function(){ 
+                lislisPaint.prototype.setColor = function(color){
+                       this.currentColor = color;
+              if(this.onColorChange.length){
+                 for(var i = 0; i < this.onColorChange     .length; i++){
+            this.onColorChange[i](this.currentColor);
+        }
+    }
+};
+ });
+         </script>
+    
+
+    <div class="menu" id="edit">
+        <h2>Edit</h2>
+        <button title="Undo (ctrl+z)" id="button_undo" class="disabled">Undo</button>
+        <button title="Clear all layers" id="button_clearall">Clear All</button>
+        <!--<button title="Get the image to new window as png" id="button_getimage">Get Image</button>-->
+        <button title="Post the image" id="button_postimage">Post Image</button>
+    </div>
+    
+    <div class="menu" id="itemInventory">
+           <h2>Items</h2>   
+            <img id="dragImage" src="brush.png" alt="" width="60px" height="60px">
+            <img id="dragImage" src="brush.png" alt="" width="60px" height="60px">
+            <img id="dragImage" src="brush.png" alt="" width="60px" height="60px">
+            <img id="dragImage" src="brush.png" alt="" width="60px" height="60px">
+            <img id="dragImage" src="brush.png" alt="" width="60px" height="60px">
+            <img id="dragImage" src="brush.png" alt="" width="60px" height="60px">
+            <img id="dragImage" src="brush.png" alt="" width="60px" height="60px">
+            <img id="dragImage" src="brush.png" alt="" width="60px" height="60px">
+            <img id="dragImage" src="brush.png" alt="" width="60px" height="60px">
+            <img id="dragImage" src="brush.png" alt="" width="60px" height="60px">
+
+                </ul>
+            </div>
+
+    
+    <div class="menu" id="paintfill">
+        <h2>Paint Fill</h2>
+        <div id="paintfilloption">
+        <div>
+            <label>
+                Paint by:
+                <select id="select_paintby">
+                    <option value="integrated">Integrated Layer</option>
+                    <option value="current">Current Layer</option>
+                    <option value="0">Layer 1</option>
+                    <option value="1">Layer 2</option>
+                </select>
+            </label>
+        </div>
+        <div>
+            <label><input type="Checkbox" id="check_paintfill_antialias" checked="true"/>Antialias</label>
+        </div>
+        <div><label>Threshold: <span id="paintfill_threshold">1</span></label>
+            <div class="range">
+                <div id="paintfill_threshold_range"></div>
+                <div class="range_bar"></div>
+                <div class="range_pos"></div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="menu" id="postimage">
+        <h2>Post Image</h2>
+        <div id="postimage_form">
+            <label>Name:<br /><input type="text" id="postimage_name"/></label>
+            <label>Comment:<br /><input type="text" id="postimage_comment"/></label>
+            <div id="postimage_buttons">
+                <button id="button_post">Post</button> <button id="button_cancelpost">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <embed name="wacom-plugin" id="wacom-plugin" type="application/x-wacom-tablet" HIDDEN="TRUE" pluginspage="http://www.wacom.com/productsupport/plugin.php" />
+</body>
+</html>
