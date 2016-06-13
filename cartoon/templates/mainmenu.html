@@ -1,0 +1,69 @@
+{% load staticfiles %}
+<html>
+<head>
+	<title>Mypage</title>
+	<meta charset="utf-8" />
+
+    <!-- css 파일 -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/common.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/layer_popup.css' %}">
+    <link href='//fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="//sscol.jebal.comuv.com/css/font.css">
+
+    <!-- js 파일 -->
+    <script type="text/javascript" src="{% static 'js/jquery-1.7.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/layer_popup.js' %}"></script>
+ 
+</head>
+
+<body>
+
+
+    <div class="ribbon ior"></div>
+    <div class="login io">
+    <div class="press">Author<span>Cartoon Pang! Pang!</span></div>
+    <img src="https://pbs.twimg.com/profile_images/640203514598174724/Yb06b9E2.jpg" alt="ggIO">
+    {% if user.is_authenticated %}
+        <br>
+        <br>
+        <h4 align="center">Welcome, {{ user.username }}!</h4>
+    </div>
+    <br><br>
+    {% endif %}
+
+    <div class="mb30">
+        <a href="#" class="btn-example" onclick="layer_open('layer2');return false;">Let's Go!</a>
+    </div>
+    <!-- 딤 레이어 팝업 창-->
+    <div class="layer">
+        <div class="bg"></div>
+        <div id="layer2" class="pop-layer">
+            <div class="pop-container">
+                <div class="pop-conts">
+                    <!--content //-->
+                        <form>
+                            <center>
+                            <a>What do you want to do?</a><br>
+                            <a>Click the button</a><br>
+                            <br>
+                            <input class="but" type='BUTTON' name='button' value='Learn'><br>
+                            <br>
+                            <input class="but" type='BUTTON' name='button' value='Make New Cartoon' onclick="location.href='editor'";><br>
+                            <br>
+                            <input class="but" type='BUTTON' name='button' value='Gallery' onclick="location.href='gallery'";><br>
+                            </center>
+                        </form>
+
+                    <div class="btn-r">
+                        <a href="#" class="cbtn">Close</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

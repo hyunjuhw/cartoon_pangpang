@@ -1,0 +1,38 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>Filter Functionality with CSS3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Filter Functionality with CSS3" />
+        <meta name="keywords" content="filter, css3, portfolio, functionality" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="{% static 'css/demo.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style1.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style_gallery.css' %}">
+		<script type="text/javascript" src="{% static 'js/modernizr.custom.29473.js' %}"></script>
+    </head>
+    <body>
+    	<h1> My Cartoons : </h1>
+		{% for cartoon in my_cartoons %}
+			<form method ="POST" action="{% url 'slideshow' %}">
+				{% csrf_token %}
+                <input type = "hidden" name = "ct_id" value = {{cartoon.ct_id}}>
+                <input type = "submit" value = {{cartoon.ct_id}}>
+            </form>
+		{% endfor %}
+
+		<h1> Other's Cartoons : </h1>
+		{% for cartoon in other_cartoons %}
+			<form method ="POST" action="{% url 'slideshow' %}">
+				{% csrf_token %}
+                <input type = "hidden" name = "ct_id" value = {{cartoon.ct_id}}>
+                <input type = "submit" value = {{cartoon.ct_id}}>
+            </form>
+		{% endfor %}
+
+    </body>
+</html>

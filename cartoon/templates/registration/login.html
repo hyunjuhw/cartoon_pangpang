@@ -1,0 +1,47 @@
+{% load staticfiles %}
+<html>
+<head>
+	<title>Login</title>
+	<meta charset="utf-8" />
+
+    <!-- css 파일 -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/common.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/layer_popup.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://sscol.jebal.comuv.com/css/font.css">
+
+    <!-- js 파일 -->
+    <script type="text/javascript" src="{% static 'js/jquery-1.7.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/layer_popup.js' %}"></script>
+ 
+</head>
+
+<body>
+    <div class="ribbon"></div>
+    <div class="login">
+    <h1>Let's get started.</h1>
+    <p>Make your creative Cartoon</p>
+    <!--로그인 폼 -->
+    
+    <form id="login" method="post" action="{% url 'login_url' %}">
+    <div class="input" placehoder="Email">
+      <div class="blockinput">
+        <i class="icon-envelope-alt"></i>
+        <center>
+        {% csrf_token %}
+        {{ form.as_table }}
+        </div>
+
+        <button><input type="submit" name="submit" method="post" action="submit" value="Click"></input></button>
+
+    </form>
+
+    </div>
+    <br>
+<a href='signup'>Are you new here?</a>
+
+
+    
+</body>
+</html>
